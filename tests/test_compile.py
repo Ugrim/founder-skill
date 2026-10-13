@@ -45,6 +45,15 @@ class Compile(unittest.TestCase):
         self.assertIn("40 buy · 60 pass", text)
         self.assertIn("- The buyer panel: run /founder-consumer", text.replace("## Not done yet", ""))
 
+    def test_next_moves_become_a_section(self):
+        self.numbers()
+        self.panel(40)
+        with open(os.path.join(self.d, "panel", "next-moves.md"), "w") as fh:
+            fh.write("# Next moves from the panel\n\nRun a pop-up first.\n")
+        _, text = plan.compile_plan(self.d)
+        self.assertIn("## What to change and test next\n\nRun a pop-up first.", text)
+        self.assertNotIn("What to change and test next: run", text)
+
     def test_a_weak_panel_means_not_yet(self):
         self.numbers()
         self.panel(12)

@@ -34,6 +34,13 @@ Or as a plugin, in Claude Code:
 /plugin install founder-skill@founder-skill
 ```
 
+Installing from this fork instead (to run your own changes):
+
+```
+/plugin marketplace add ugrim/founder-skill
+/plugin install founder-skill@founder-skill
+```
+
 Claude Code namespaces plugin skills, so installed as a plugin they show up as
 `/founder-skill:founder-board` and so on. Copy the folders instead if you want
 plain `/founder-board`:
@@ -66,6 +73,48 @@ The tools need Python 3.8 or newer. Nothing to pip install.
 | `/founder-launch` | Launch Lead | A cheap real-world test first, then a dated countdown, the launch-day run sheet and the first 30 days. |
 | `/founder-plan` | Business Planner | Compiles everything into one business plan with a verdict computed from the numbers: Profitable, Not yet or Incomplete. |
 
+## Quick start
+
+Paste this into Claude with your answers filled in, then run `/founder-board`
+(`/founder-skill:founder-board` if installed as a plugin):
+
+```
+I'm exploring a new business idea and want to evaluate it using the Founder Skills.
+
+Business idea: [what you want to sell]
+Target customer: [who will buy it]
+Location/market: [where you will sell]
+Expected price: [your estimated selling price]
+Startup budget: [how much you can invest]
+Biggest uncertainty: [what you're worried about]
+
+Help me evaluate this business systematically. Start with the Board of Directors,
+identify the biggest risks, and tell me what we need to validate next. Ask for
+missing information rather than inventing facts.
+```
+
+The board turns those answers into `founder/idea.md`, and its summary ends with
+what to validate next, starting with your biggest uncertainty.
+
+Then put it in front of the buyers with `/founder-consumer --quick` (20 buyers),
+and the full 100 once the pitch is right. Besides the tally, the panel writes
+`founder/panel/next-moves.md`: the five biggest reasons buyers pass, three
+changes ranked by impact and effort, one cheap test with real people, and a
+table that keeps simulated findings apart from verified ones. It is the same as
+asking this after any panel run:
+
+```
+Based on the Consumer Panel results, identify the five biggest reasons customers
+might reject my business. Recommend three changes to my product, pricing, or
+offer that could address those objections. Rank those changes by impact and
+effort. Then suggest a low-cost experiment I can run with real potential
+customers to test the strongest recommendation. Clearly separate simulated
+findings from facts we have actually verified.
+```
+
+`/founder-offer` builds the top change into the offer and `/founder-launch` runs
+the test.
+
 ## How to use it
 
 Run them in this order. Each one reads what the others wrote, in a `founder/`
@@ -88,6 +137,8 @@ input is in the example files in this repo, so you can run the tools on it.)
    objections, and runs one sub-agent per buyer. Back comes who buys, who passes,
    the reasons in their words ("my coffee place is closer", "$6.50 is steep for a
    drink") and what would flip a no.
+   It also writes the next moves: the top reasons to pass, three changes and
+   the first real test to run.
 4. **`/founder-pricing`** reads the panel's four price answers per buyer into a
    price range and checks $6.50 against it and against the competitors.
 5. **`/founder-offer`** answers the top objections with the offer (a launch-week

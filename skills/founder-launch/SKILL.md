@@ -19,7 +19,8 @@ will pay before the big money goes out.
 ## Step 1: test before you spend
 
 Pick the cheapest real test that fits the business, and run it before signing the
-big costs in `founder/numbers.json`:
+big costs in `founder/numbers.json`. If `founder/panel/next-moves.md` already names
+a test, start from it rather than inventing another:
 
 | business | the test |
 | --- | --- |
