@@ -41,11 +41,15 @@ it does not exist, write it now from the conversation:
 - What it sells, at what price: the core product and its price.
 - Where and how: city or online, how customers find it, how it is delivered.
 - Budget and constraints: money, time, skills, anything already decided.
+- Biggest uncertainty: what the founder is most worried about, in their words.
 ```
 
-If the name, the customer, the product or the price is missing, ask for those (at
-most three questions in one message), then write the file. Do not invent a
-budget, a market size or a competitor.
+If the user pasted the starter prompt from the README (business idea, target
+customer, location/market, expected price, startup budget, biggest uncertainty),
+map each answer to its line. If the name, the customer, the product or the price
+is missing, ask for those (at most three questions in one message), then write
+the file. Do not invent a budget, a market size, a competitor or an uncertainty:
+leave a missing line as "not given yet".
 
 ## Step 1: brief the board
 
@@ -83,6 +87,11 @@ Read the three memos (they are short) and write `founder/board.md`:
    (the CFO, the consumer panel and pricing will test most of them).
 4. One paragraph: the strongest version of this business the board can see.
    It may differ from what the user pitched; say so plainly.
+5. What to validate next: the three open questions that matter most, starting
+   with the founder's biggest uncertainty if they gave one. For each, the skill
+   that answers it on paper (`/founder-competitors`, `/founder-consumer`,
+   `/founder-cfo`...) and the real-world check that confirms it (a quote, an
+   interview, a pre-sale).
 
 Keep the members' disagreements. A board that agrees on everything was not doing
 its job.
@@ -98,7 +107,7 @@ its job.
 ## Output
 
 `founder/idea.md`, `founder/board/` (brief and three memos), `founder/board.md`.
-Then say the vote in one line and suggest the next step: `/founder-competitors`
+Then say the vote in one line, the biggest risk in one line, and suggest the next step: `/founder-competitors`
 to see who is already there, or `/founder-consumer` to put it in front of 100
 simulated buyers.
 

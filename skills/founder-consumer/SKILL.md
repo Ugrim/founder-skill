@@ -98,8 +98,41 @@ file, so suggest accept-edits mode (Shift+Tab) for the run.
 2. Who buys and who doesn't: the segment and behaviour rows that differ most.
 3. Why they pass: the top three reasons with one quote each, as written.
 4. What would flip a no: the most repeated answers.
-5. One sentence on what to change before spending money, and which skill does it
+5. Which segment to test with first: the group with the highest buy rate that
+   the founder can actually reach, and why.
+6. One sentence on what to change before spending money, and which skill does it
    (pricing, offer, marketing).
+
+## Step 5: from objections to a real test
+
+Write `founder/panel/next-moves.md`, built only from `results.md` and the answers
+on file:
+
+```markdown
+# Next moves from the panel
+
+## The five biggest reasons buyers pass
+1. <reason>: <how many buyers> · "<one quote, as written>"
+
+## Three changes, ranked
+| change | to product, price or offer | answers reason # | impact | effort |
+(impact and effort are high / medium / low; sort by impact, then by lowest effort)
+
+## One cheap test with real people
+The strongest change, the test (a landing page, a pre-sale, five interviews, a
+pop-up), who it targets (the segment from step 4), what it costs, and the
+success line written before it runs (for example: 30 pre-orders in 14 days).
+
+## Simulated vs verified
+| finding | source | status |
+(status is Simulated for anything from the panel, Verified only for what the
+founder has confirmed with real customers, real quotes or real data)
+```
+
+Fewer than five pass reasons on file? List the ones there are; never pad the list.
+Nothing on this page is Verified until the founder says it is and says how.
+`/founder-offer` builds the changes into the offer and `/founder-launch` runs the
+test.
 
 ## Honest limits, say them once
 
@@ -122,5 +155,5 @@ expensive, too expensive). Never edit a brief for one buyer.
 ## Output
 
 `founder/customer.json`, `founder/pitch.md`, `founder/panel/` (cards, briefs,
-answers, results). Next: `/founder-pricing` reads the price answers,
+answers, results, next moves). Next: `/founder-pricing` reads the price answers,
 `/founder-offer` and `/founder-marketing` read the objections.

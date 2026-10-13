@@ -24,6 +24,8 @@ framework in Alex Hormozi's *$100M Offers*; never present it as his words).
 - `founder/idea.md` and `founder/pitch.md`: what is sold today.
 - `founder/panel/results.md`: why buyers pass, in their words. This is the raw
   material: every top objection should be answered by something in the offer.
+- `founder/panel/next-moves.md`, if it exists: the three ranked changes. Start
+  with the top one.
 - `founder/numbers.json`: what each extra costs, so the stack stays profitable.
 - `founder/board.md`: the board's conditions.
 
